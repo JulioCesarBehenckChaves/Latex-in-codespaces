@@ -1,0 +1,33 @@
+{
+  "name": "LaTeX editing with Python and R",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-toolsai.jupyter",
+        "ms-toolsai.jupyter-keymap",
+        "ms-toolsai.jupyter-renderers",
+        "REditorSupport.r",
+        "reditorsupport.r-lsp",
+        "ms-vscode-remote.remote-containers",
+        "mathematic.vscode-latex",
+        "analytic-signal.preview-pdf"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "jupyter.notebookFileRoot": "${workspaceFolder}",
+        "terminal.integrated.defaultProfile.linux": "bash"
+      }
+    }
+  },
+  "forwardPorts": [8888],
+  "remoteUser": "vscode",
+  "remoteEnv": {
+    "R_LIBS_USER": "/home/vscode/R/library"
+  },
+  "postCreateCommand": "bash .devcontainer/setup.sh"
+}

@@ -7,53 +7,49 @@ A GitHub Codespaces-ready repository for LaTeX authoring enables seamless editin
 ## Core Structure
 Organize files as follows for optimal Codespaces integration:
 
-text
+```text
 latex-repo/
 ├── .devcontainer/
 │   ├── devcontainer.json      # Defines TeX environment and VS Code extensions
-│   └── Dockerfile             # Custom TeX Live installation (optional)
+│   └── Dockerfile             # Customized image
 ├── .github/
 │   └── workflows/             # CI/CD for PDF builds on push/PR
 │       └── latex.yml
-├── src/                       # LaTeX source files
+├── src/my-project/            # LaTeX source files
 │   ├── main.tex               # Primary document
 │   ├── chapters/              # Modular chapters
 │   └── assets/                # Images, bib files
-├── output/                    # Generated PDFs (gitignored)
-├── Makefile                   # Build automation (pdflatex, bibtex)
 └── README.md                  # Setup instructions
-Devcontainer Setup
-Configure .devcontainer/devcontainer.json to pre-install LaTeX tools:
+```
 
-json
-{
-  "name": "LaTeX",
-  "image": "ghcr.io/latexstudio/docker-latex-workshop:latest",
-  "customizations": {
-    "vscode": {
-      "extensions": ["James-Yu.latex-workshop"]
-    }
-  },
-  "forwardPorts": [3000],
-  "postCreateCommand": "latexmk -synctex=1 -interaction=nonstopmode -file-line-error main.tex"
-}
-This spins up a full TeX environment on Codespace launch, with live PDF preview.
+## Getting Started
 
-Workflow Automation
-Use GitHub Actions for builds:
+### How to compile the LaTeX document
+/workspaces/Latex-in-codespaces/src/my-project/interactnlmsample.tex
+```bash
+cd "/workspaces/Latex-in-codespaces/src/my-project" && pdflatex -interaction=nonstopmode interactnlmsample.tex
+```
 
-text
-# .github/workflows/latex.yml
-name: Build LaTeX
-on: [push, pull_request]
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: xu-cheng/latex-action@v3
-        with:
-          args: '-pdf -file-line-error -interaction=nonstopmode main.tex'
-      - uses: actions/upload-artifact@v4
-        with: {name: pdf, path: main.pdf}
-Executives gain automated PDF artifacts on PRs, ensuring compliance and review efficiency. Codespaces supports real-time collaboration without local installs.
+### How to compile with bibliography
+
+```bash
+# 1. Compile the .tex file with pdflatex (first pass)
+pdflatex interactnlmsample.tex
+
+# 2. Process the references with bibtex
+bibtex interactnlmsample
+
+# 3. Compile again with pdflatex (second pass)
+pdflatex interactnlmsample.tex
+
+# 4. Compile a third time to resolve cross-references
+pdflatex interactnlmsample.tex
+```
+
+### How to clean strange characters preventing compilation
+
+```bash
+find src/my-project/ -name '*.tex' -print0 | xargs -0 perl -CS -pi -e 's/\x{200B}//g'
+```
+
+Codespaces supports real-time collaboration without local installs. Enjoy it.
