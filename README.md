@@ -12,13 +12,12 @@ latex-repo/
 ├── .devcontainer/
 │   ├── devcontainer.json      # Defines TeX environment and VS Code extensions
 │   └── Dockerfile             # Customized image
-├── .github/
-│   └── workflows/             # CI/CD for PDF builds on push/PR
-│       └── latex.yml
 ├── src/my-project/            # LaTeX source files
 │   ├── main.tex               # Primary document
 │   ├── chapters/              # Modular chapters
 │   └── assets/                # Images, bib files
+├── src/my-brazilian-project/  # Brazilian Portugese example
+│   ├── chatfgv.tex            # Primary document
 └── README.md                  # Setup instructions
 ```
 

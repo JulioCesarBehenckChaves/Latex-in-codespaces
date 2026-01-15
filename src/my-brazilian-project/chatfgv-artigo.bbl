@@ -1,0 +1,40 @@
+\begin{thebibliography}{4}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Beloch(1978)]{Beloch1978}
+I.~Beloch.
+\newblock Dicionário histórico-biográfico brasileiro: dilemas na
+  elaboração de um dicionário de história política.
+\newblock \emph{Revista de Ciência Política}, 21\penalty0 (3):\penalty0
+  29--52, jul./set. 1978.
+
+\bibitem[Brotman and Sack(2025)]{Brotman2025}
+Adam Brotman and Andy Sack.
+\newblock \emph{AI First: The Playbook for a Future-Proof Business and Brand
+  (English Edition)}.
+\newblock Harvard Business Review Press, 2025.
+
+\bibitem[Cadeddu et~al.(2024)Cadeddu, Chessa, Leo, Fenu, Motta, Osborne,
+  Recupero, Salatino, and Secchi]{Cadeddu2024}
+Andrea Cadeddu, Alessandro Chessa, Vincenzo~De Leo, Gianni Fenu, Enrico Motta,
+  Francesco Osborne, Diego~Reforgiato Recupero, Angelo Salatino, and Luca
+  Secchi.
+\newblock A comparative analysis of knowledge injection strategies for large
+  language models in the scholarly domain.
+\newblock \emph{Engineering Applications of Artificial Intelligence}, 133, 7
+  2024.
+\newblock ISSN 09521976.
+\newblock \doi{10.1016/j.engappai.2024.108166}.
+
+\bibitem[Carter(2025)]{Carter2025}
+Sandy Carter.
+\newblock \emph{AI first, human always : embracing a new mindset for the era of
+  superintelligence}.
+\newblock John Wiley \& Sons, Inc., 2025.
+\newblock ISBN 1394189826.
+
+\end{thebibliography}

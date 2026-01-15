@@ -1,0 +1,86 @@
+\documentclass{interact}
+
+% spacing and line numbers
+\usepackage{setspace}
+\usepackage[switch]{lineno}
+
+% encoding and fonts
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+% Ignore zero-width space if pasted from editors
+\DeclareUnicodeCharacter{200B}{}
+
+% citations (author-year): \citet (Autor, Ano) e \citep (Autor, Ano)
+\usepackage[authoryear,round]{natbib}
+
+% color and hyperlinks (keep hyperref loaded last)
+\usepackage{xcolor}
+% hyperlinks and URLs (keep hyperref loaded last)
+% Usage examples:
+%  - URL simples: \url{https://exemplo.com}
+%  - Link com texto: \href{https://exemplo.com}{texto do link}
+%  - E-mail: \href{mailto:nome@dominio.com}{nome@dominio.com}
+\usepackage[hidelinks]{hyperref}
+\urlstyle{same}
+
+% main details
+\title{ChatFGV: Um protótipo de leitura de dados históricos via chat com LLMs}
+
+\author{
+\name{Isabela Yabe Martinez\textsuperscript{b} and George Dutra\textsuperscript{b} and Jaqueline Zulini\textsuperscript{a} and Felipe Vinhas\textsuperscript{c} and Fernanda Santos\textsuperscript{c} and Júlio César Chaves\textsuperscript{b}\thanks{CONTACT J.C. Chaves Email: julio.cesar.chaves@prof.fgv.edu.br}}
+\affil{\textsuperscript{a}CPDOC/Fundação Getúlio Vargas; \textsuperscript{b}EMAp/Fundação Getúlio Vargas; \textsuperscript{c}DTI/Fundação Getúlio Vargas}
+}
+
+% secondary details
+%\affiliation{Affiliation}
+%\correspondence{youremail@tld.com}
+%\version{\today}
+%\version{19-dez}
+
+% headers
+%\runningauthor{Your name}
+%\runningtitle{Short title}
+
+%\abstract{ }
+
+\begin{document}
+	\maketitle
+
+	% Apply one-and-a-half line spacing and enable line numbers
+	\doublespacing
+	\linenumbers
+
+	\emph{Controle de versão - 19-dez} - Transcrita do Word para o LaTeX, a partir da versão do Word de 19-dez, última edição feita pela Isabela.
+
+
+	\emph{Descrição da contribuição de cada autor:}
+	J.C. Chaves: idealização do projeto, supervisão geral, organização geral do artigo.
+	Isabela Yabe Martinez: desenvolvimento da qualidade e validação do modelo, seção de validação e resultados.
+	George Dutra: desenvolvimento do código para o RAG, experimentos com o DHBB, seção métodos.
+	Jaqueline Zulini: apoio na idealização do projeto, revisão bibliográfica, seção de introdução e descrição do DHBB.
+	Felipe Vinhas: apoio na infraestrutura de produção, revisão do artigo.
+	Fernanda Santos: apoio na organização do projeto, revisão do artigo.
+
+	
+	
+	\input{introdução.tex}
+
+	\input{revisão-bibliográfica.tex}
+
+	\input{materiais.tex}
+	
+	\input{metodos.tex}
+	
+	\input{resultados.tex}
+
+	\input{conclusao.tex}
+	
+	% References
+	% \bibliographystyle{tfnlm}
+	\bibliographystyle{plainnat}
+	\bibliography{minha-biblioteca}  
+	%-- minha-biblioteca.bib is the name of the Bibliography in this case
+
+	
+\end{document}
